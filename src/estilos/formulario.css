@@ -1,0 +1,14 @@
+input {
+  display: inline-block;
+  text-align: justify;
+  width: 95%;
+  margin: auto;
+  padding: 10px;
+  border-style: hidden;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+}
+
+input:focus {
+  outline: none;
+}
