@@ -1,31 +1,28 @@
-import React, { useState } from 'react';
-import '../estilos/formulario.css'
+import React, { useState } from "react";
+import "../estilos/formulario.css";
 
-const useInputValue = initialValue => {
+const useInputValue = (initialValue) => {
   const [value, setValue] = useState(initialValue);
 
   return {
     value,
-    onChange: e => setValue(e.target.value),
-    resetValue: () => setValue("")
+    onChange: (e) => setValue(e.target.value),
+    resetValue: () => setValue(""),
   };
 };
 
 export default ({ onSubmit }) => {
-  const { resetValue, ...text} = useInputValue("");
+  const { resetValue, ...text } = useInputValue("");
 
   return (
-    <form 
-      onSubmit={e => {
+    <form
+      onSubmit={(e) => {
         e.preventDefault();
         onSubmit(text.value);
         resetValue();
       }}
     >
-      <input {...text} placeholder='Escribe una nueva tarea'></input>
-      
+      <input {...text} placeholder="Escribe una nueva tarea"></input>
     </form>
-  )
-}
-
-
+  );
+};
